@@ -5,7 +5,6 @@ import Header from './components/Header';
 import Homepage from './components/Homepage';
 import Loginpage from './components/Loginpage';
 import Signuppage from './components/Singuppage';
-import Dashboard from "./components/Dashboard";
 import "./App.css";
 
 function App() {
@@ -24,12 +23,6 @@ function App() {
            <Route
               path="/signup"
               element={<Signuppage />}
-          />
-          
-          {/* dummy page */}
-          <Route
-              path="/dashboard"
-              element={<Dashboard />}
           />
       </Routes>
     <Footer/>
