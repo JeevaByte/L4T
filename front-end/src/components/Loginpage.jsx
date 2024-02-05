@@ -16,6 +16,7 @@ const Loginpage = () => {
     });
 
   const [errorPwd, setErrorPwd] = useState("");
+  const [notRegistered, setNotRegistered] = useState(false);
 
   const onInputChange = (e) => {
       setUser({...user, [e.target.name]: e.target.value});
@@ -25,13 +26,19 @@ const Loginpage = () => {
   const onSubmit = async (e) => {
         e.preventDefault();
         setErrorPwd("");
-        const response = await api.get("/login/"+user.email);
-        if(response.data.password === user.password)
-        {
-          Navigate("/");
+        setNotRegistered(false);
+        try{
+          const response = await api.get("/login/"+user.email);
+          if(response.data.password === user.password)
+          {
+            Navigate("/");
+          }
+          else
+            setErrorPwd("Invalid Credentials")
+          }
+        catch{
+          setNotRegistered(true);
         }
-        else
-          setErrorPwd("Invalid Credentials")
   }
 
   return (
@@ -64,6 +71,9 @@ const Loginpage = () => {
                       <form onSubmit={(e) => onSubmit(e)}>
                           <div className="form-controls">
                             <input type="text" name="email" placeholder='Enter Email Address' onChange={(e) => onInputChange(e)}/>
+                            {notRegistered && (
+                              <p className="error"> Email ID doesn't exist </p>
+                            )}
                           </div>
                           <div className="form-controls">
                             <input type="password" name="password" placeholder='Enter Password' onChange={(e) => onInputChange(e)}/>
