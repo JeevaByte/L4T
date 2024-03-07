@@ -1,16 +1,16 @@
 :root {
-  --blue: #9ab3f5;
+  --blue: #21d0b2;
   --purple: #000000;
   --white: #ffffff;
 
   --shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 ::-moz-selection {
-  background-color: #3bacf0;
+  background-color: #21d0b2;
   color: #fff;
 }
 ::selection {
-  background-color: #3bacf0;
+  background-color: #21d0b2;
   color: #fff;
 }
 html, body{
@@ -18,7 +18,7 @@ position:relative;
 overflow-x:hidden;
 }
 body {
-  color:#5e606e;
+  color:#21d0b2;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -49,9 +49,7 @@ color:#333;
 .card{
  border: 0;
 }
-a:hover{
- color:#33404c
-}
+
 iframe {
   border: 0;
 }
@@ -124,11 +122,11 @@ header {
   position: fixed;
   background: #93a2b4;
   z-index: 100;
+  background-color: #2f455c ;
 }
 .nav-bar{
   display: flex;
   align-items: center;
-
 }
 .nav-links {
   display: flex;
@@ -139,9 +137,16 @@ header {
 .nav-links ul {
 display: flex;
 }
-.nav-links ul li a{
+.nav-links ul li{
   padding: 5px 10px;
   color: #fff;
+}
+.nav-links a{
+  color: #fff;
+}
+
+.nav-links a:hover{
+  color: #21d0b2 !important;
 }
 .search-bar-container {
   display: flex;
@@ -152,6 +157,9 @@ display: flex;
   font-size: 22px;
   font-weight: 600 !important;
   color: #fff;
+}
+.nav-bar .logo{
+  color: #34f5c5;
 }
 .banner {
   width: 100%;
@@ -174,11 +182,25 @@ display: flex;
   background: none;
   color: #000;
 }
+.custom-btn:hover{
+  color: #21d0b2;
+}
+.custom-btn.login-btn:hover{
+  color: #21d0b2;
+}
 .logo {
   color: #000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
 }
+.logo h2{
+  padding-left: 10px;
+}
+
 .logo:hover{
-  color: #000;
+  color: #21d0b2;
 }
 /* search bar start*/
 .search-bar {
@@ -189,14 +211,76 @@ display: flex;
   background-color: var(--white);
 }
 
-.dropdown {
+.dropdown-t {
+  padding: 5px 10px;
+  background-color: #000;
+  color: #ddd;
+  border: none;
+  border-radius: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-t button {
+  background-color: #000;
+  border: none;
+  color: #ddd;
+}
+
+.dropdown-m {
+  z-index: 1000; /* increase this value to ensure that the dropdown menu is displayed on top of other elements */
+  
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 5px 0;
+  background-color: #000;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 100px;
+}
+
+.dropdown-m--block {
+  display: none;
+}
+
+.dropdown-m--visible {
+  display: block;
+}
+
+.dropdown-m li {
+  list-style: none;
+  padding: 5px 10px;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown-m li a {
+  padding: 0;
+  color: #e0e0e0;
+  text-decoration: none;
+  display: block;
+}
+
+/* .dropdown:hover .dropdown-m {
+  display: block;
+} */
+
+.drop {
   position: relative;
-  width: 110px;
+  width: 100px;
   border-radius: 50px;
   background-color: var(--purple);
   border: 1px solid var(--white);
   box-shadow: var(--shadow);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .dropdown-text {
@@ -221,7 +305,7 @@ display: flex;
   overflow: hidden;
   background-color: var(--white);
   transition: max-height 0.5s;
-}
+} 
 
 .dropdown-list-item {
   font-size: 0.9rem;
@@ -235,7 +319,7 @@ display: flex;
 .dropdown-list-item:hover {
   margin-left: 0.5rem;
   color: var(--purple);
-}
+} */
 
 #list.show {
   max-height: 300px;
@@ -381,7 +465,7 @@ display: flex;
     transition: all 0.3s ease;
   }
   .skills-links a:hover{
-    color: #275cd4;
+    color: #21d0b2;
     text-decoration:underline !important;
   }
   .accordion .accordion-item:last-child{
@@ -415,7 +499,7 @@ display: flex;
 footer {
   width: 100%;
   padding: 40px 0px;
-  background: #000000;
+  background: #2f455c;
 }
 footer h5{
   color: #fff;
@@ -428,6 +512,10 @@ footer h5{
   color: #e0e0e0;
   font-weight: 300;
   font-size: 14px;
+}
+
+.footer-list-links a:hover{
+  color: #21d0b2;
 }
 .footer-list-links li a:hover{
    text-decoration: underline !important;
@@ -491,6 +579,7 @@ footer h5{
   font-weight: 300;
   font-size: 14px;
 }
+
 .copy-rights a{
   color: #e0e0e0;
   margin-left: 10px;
@@ -498,7 +587,8 @@ footer h5{
   font-size: 14px;
 }
 .copy-rights a:hover{
-  text-decoration: underline !important;
+  text-decoration: none !important;
+  color: #21d0b2;
 }
 /* inner banner */
 .inner-banner{
@@ -523,7 +613,7 @@ footer h5{
   border: 1px solid #93a2b4;
 }
 .left-login-content {
-  background: #666;
+  background: #2f455c;
   text-align: center;
   padding: 30px;
 }
@@ -549,16 +639,28 @@ footer h5{
 .form-controls {
   margin-bottom: 25px;
 }
+
 .form-controls input{
   width: 100%;
   height: 44px;
   padding: 0 15px;
   border-radius: 5px;
   border: 1px solid #666666;
+  
+}
+.form-box-input{
+  height: 20px;
 }
 .form {
   max-width: 80%;
   margin: auto;
+}
+.form-check{
+  display: flex !important;
+  width: 150px !important;
+  margin: 10px;
+  display: flex;
+  align-items: center;
 }
 .custom-btn.login-btn{
     padding: 9px 23px;
@@ -571,12 +673,29 @@ footer h5{
     font-weight: 600;
     border: 1px solid #000;
 }
+
 .signup-links span{
    color: #707070;
    font-size: 14px;
 }   
+
 .signup-links span a{
   text-decoration: underline !important;
   font-weight: 600;
 }
-
+.form-check-input{
+  height: 20px !important;
+  width: 20px !important;
+  padding: 0 !important;
+}
+.form-check-label{
+  padding: 5px;
+}
+.show-password{
+  columns: 1;
+  height: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

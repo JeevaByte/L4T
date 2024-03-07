@@ -6,6 +6,7 @@ import Homepage from './components/Homepage';
 import Loginpage from './components/Loginpage';
 import Signuppage from './components/Singuppage';
 import "./App.css";
+import Aboutus from "./components/Aboutus";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
            <Route
               path="/signup"
               element={<Signuppage />}
+          />
+          <Route
+              path="/aboutus"
+              element={<Aboutus />}
           />
       </Routes>
     <Footer/>

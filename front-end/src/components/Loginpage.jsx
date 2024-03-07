@@ -16,7 +16,10 @@ const Loginpage = () => {
     });
 
   const [errorPwd, setErrorPwd] = useState("");
+
   const [notRegistered, setNotRegistered] = useState(false);
+
+  const [typeState, setTypeState] = useState("password");
 
   const onInputChange = (e) => {
       setUser({...user, [e.target.name]: e.target.value});
@@ -76,10 +79,21 @@ const Loginpage = () => {
                             )}
                           </div>
                           <div className="form-controls">
-                            <input type="password" name="password" placeholder='Enter Password' onChange={(e) => onInputChange(e)}/>
+                            <input type={typeState} name="password" placeholder='Enter Password' onChange={(e) => onInputChange(e)}/>
                             {errorPwd && (
                               <p className="error"> {errorPwd} </p>
                             )}
+                              <div className="form-check col-1">
+                                <input className="form-check-input" type="checkbox" id="invalidCheck" onClick={() =>
+                                  typeState === "password"
+                                    ? setTypeState("text")
+                                    : setTypeState("password")
+                                } />
+                                <label className="form-check-label" for="invalidCheck">
+                                  Show Password
+                                </label>   
+                                </div>
+
                           </div>
                           <div className='d-flex justify-content-end form-controls'>
                              <button className='custom-btn login-btn' type='submit'>Submit</button>

@@ -1,31 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import logoimg from '../img/finallogoimage.png'
 
 const Header = () => {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuVisible(!isMenuVisible);
+  };
   return (
-    <header>
+    <header className='position-relative'>
       <div className="container">
         <nav className='nav-bar'>
           <div className="logo">
-            <h2 className='m-0'> <CustomLink to="/" className='logo'>learn4tomorrows</CustomLink></h2>
+            <img src={logoimg} alt='logo' width="90px" height="90px" />
+            <h2 className='m-0'> <CustomLink to="/" className='logo'>learn4tomorrow</CustomLink></h2>
           </div>
           <div className='nav-links'>
             <ul>
-              <li><a href="#">How It Works</a></li>
+              <li><Link to='/aboutus'>About us</Link></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
             <div className='search-bar-container'>
               <div>
                 <div className="search-bar">
-                  <div className="dropdown">
-                    <div id="drop-text" className="dropdown-text">
-                      <span id="span">Projects</span>
-                      <i id="icon" className="fa-solid fa-chevron-down"></i>
+                  <div className="drop">
+                    <div className="dropdown-t">
+                    <button  type="button" onClick={toggleMenu}>Projects</button>
+                    <i id="icon" className="fa-solid fa-chevron-down"></i>
                     </div>
-                    <ul id="list" className="dropdown-list">
-                      <li className="dropdown-list-item">Projects</li>
-                      <li className="dropdown-list-item">Jobs</li>
-                    </ul>
+                    <div className={`dropdown-m ${isMenuVisible ? 'dropdown-m--visible' : 'dropdown-m--block'}`}>
+                      <li><a href="#">Projects</a></li>
+                      <li><a href="#">Jobs</a></li>
+                    </div>
                   </div>
                   <div className="search-box">
                     <input type="text" id="search-input" placeholder="Search anything..." />
@@ -47,15 +53,16 @@ const Header = () => {
   );
 }
 
-function CustomLink({to ,children, ...props}){
-    const resolvedpath = useResolvedPath(to)
-    const isActive = useMatch({path:resolvedpath.pathname , end:true})
 
-    return (
-        <Link className={isActive ?'active':''} to={to} {...props}>
-           {children}
-        </Link>
-    )
+function CustomLink({to ,children, ...props}){
+  const resolvedpath = useResolvedPath(to)
+  const isActive = useMatch({path:resolvedpath.pathname , end:true})
+
+  return (
+      <Link className={isActive ?'active':''} to={to} {...props}>
+         {children}
+      </Link>
+  )
 }
 
 export default Header;

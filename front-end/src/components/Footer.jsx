@@ -37,7 +37,7 @@ const Footer = () => {
                 <div className="col-md-3">
                     <h5>Company</h5>
                     <ul className='footer-list-links'>
-                        <li><a href="#">How Its Workds</a></li>
+                        <li><a href="#">How It Works</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                           <span><i class="fa-solid fa-phone"></i></span> <span className='ms-2 gray'>9854213212</span>
                         </div>
                         <div className='contact-info'>
-                          <span><i class="fa-solid fa-envelope"></i></span> <span className='ms-2 gray'>learn4tomorrows.com</span>
+                          <span><i class="fa-solid fa-envelope"></i></span> <span className='ms-2 gray'>learn4tomorrows@gmail.com</span>
                         </div>
                      </div>
                 </div>
@@ -74,8 +74,8 @@ const Footer = () => {
                     <div className='copy-rights'>
                     <span>© 2024 learn4tomorrows</span>
                         <div>
-                            <a href="#">Terms of Service    </a>
-                            <a href="#">Privacy Policy   </a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Privacy Policy</a>
                         </div>
                     </div>
                    
